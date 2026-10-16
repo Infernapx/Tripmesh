@@ -1,0 +1,65 @@
+---
+interface Props {
+  day: number;
+  dateStr?: string;
+  title: string;
+  items: Array<{
+    time?: string;
+    type: 'transport' | 'accommodation' | 'activity' | 'meal' | 'note';
+    title: string;
+    description?: string;
+    cost?: string;
+    isEstimated?: boolean;
+  }>;
+}
+
+const { day, dateStr = "Day plan", title, items } = Astro.props;
+---
+
+<div class="relative border border-horizon-300 rounded-lg bg-paper-50 dark:bg-ink-900 shadow-sm overflow-hidden mb-6">
+  {/* Perforated ticket edge motif (CSS only) */}
+  <div class="absolute top-0 left-0 right-0 h-1 bg-repeating-linear bg-horizon-300/40"></div>
+  
+  <div class="p-5 pt-6">
+    <div class="flex justify-between items-baseline border-b border-horizon-300/30 pb-3 mb-4">
+      <div>
+        <span class="font-mono text-xs uppercase text-stamp-500 tracking-wider">Day {day}</span>
+        <h3 class="font-display text-xl font-medium tracking-tight mt-0.5">{title}</h3>
+      </div>
+      <span class="font-mono text-xs text-horizon-300">{dateStr}</span>
+    </div>
+
+    <div class="space-y-4">
+      {items.map((item) => (
+        <div class="flex gap-4 items-start pb-3 border-b border-horizon-300/10 last:border-0 last:pb-0">
+          {item.time && (
+            <span class="font-mono text-xs text-horizon-600 dark:text-horizon-300 w-12 shrink-0 pt-0.5">{item.time}</span>
+          )}
+          <div class="flex-grow">
+            <div class="flex justify-between items-baseline gap-2">
+              <h4 class="text-sm font-semibold text-ink-900 dark:text-paper-50">{item.title}</h4>
+              {item.cost && (
+                <span class="font-mono text-xs text-brass-400 font-medium shrink-0">{item.cost}</span>
+              )}
+            </div>
+            {item.description && (
+              <p class="text-xs text-horizon-300 mt-1">{item.description}</p>
+            )}
+            {item.isEstimated && (
+              <span class="inline-block font-mono text-[9px] uppercase px-1.5 py-0.5 mt-2 bg-signal-red/10 border border-signal-red/20 text-signal-red rounded">
+                Estimated Price
+              </span>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .bg-repeating-linear {
+    background-image: repeating-linear-gradient(90deg, transparent, transparent 4px, var(--color-horizon-300, #7FA8AE) 4px, var(--color-horizon-300, #7FA8AE) 8px);
+    background-size: 100% 2px;
+  }
+</style>

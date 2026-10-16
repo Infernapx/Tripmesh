@@ -1,0 +1,301 @@
+[
+  {
+    "id": "lisbon-castelo-sao-jorge",
+    "name": "Castelo de São Jorge (Saint George's Castle)",
+    "destination": "LIS",
+    "city": "Lisbon",
+    "description": "Standing on Lisbon's highest hill overlooking the historic center and the Tagus River. The fortress features 11 towers, archaeological ruins from the Moorish and medieval eras, a camera obscura in the Tower of Ulysses, and panoramic vistas over the Baixa and Alfama districts.",
+    "tags": [
+      "historic",
+      "castle",
+      "viewpoint",
+      "medieval",
+      "landmark"
+    ],
+    "estimated_duration_hours": 2.5,
+    "estimated_cost_amount": 15.0,
+    "estimated_cost_currency": "EUR",
+    "lat": 38.7139,
+    "lon": -9.1334,
+    "source_citation": "Wikivoyage contributors, 'Lisbon', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/Lisbon"
+  },
+  {
+    "id": "lisbon-torre-de-belem",
+    "name": "Torre de Belém (Belém Tower)",
+    "destination": "LIS",
+    "city": "Lisbon",
+    "description": "An iconic 16th-century fortified tower on the northern bank of the Tagus River, built in the Manueline (Portuguese late Gothic) architectural style to defend the city and serve as a ceremonial gateway for Portuguese explorers.",
+    "tags": [
+      "unesco",
+      "monument",
+      "architecture",
+      "history",
+      "waterfront"
+    ],
+    "estimated_duration_hours": 1.5,
+    "estimated_cost_amount": 9.0,
+    "estimated_cost_currency": "EUR",
+    "lat": 38.6916,
+    "lon": -9.216,
+    "source_citation": "Wikivoyage contributors, 'Lisbon/Belém', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/Lisbon/Bel%C3%A9m"
+  },
+  {
+    "id": "lisbon-mosteiro-dos-jeronimos",
+    "name": "Mosteiro dos Jerónimos (Jerónimos Monastery)",
+    "destination": "LIS",
+    "city": "Lisbon",
+    "description": "A UNESCO World Heritage monument constructed in the early 1500s commemorating Vasco da Gama's voyage to India. Known for its richly sculpted limestone cloisters, maritime motifs, and the tomb of Vasco da Gama.",
+    "tags": [
+      "unesco",
+      "monastery",
+      "gothic",
+      "history",
+      "architecture"
+    ],
+    "estimated_duration_hours": 2.0,
+    "estimated_cost_amount": 12.0,
+    "estimated_cost_currency": "EUR",
+    "lat": 38.6979,
+    "lon": -9.2067,
+    "source_citation": "Wikivoyage contributors, 'Lisbon/Belém', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/Lisbon/Bel%C3%A9m"
+  },
+  {
+    "id": "lisbon-miradouro-santa-luzia",
+    "name": "Miradouro de Santa Luzia & Alfama Alleys",
+    "destination": "LIS",
+    "city": "Lisbon",
+    "description": "A romantic terrace viewpoint overlooking the terracotta rooftops and historic whitewashed houses of the Alfama district down to the Tagus River. The pergola is lined with traditional blue-and-white azulejo tiles depicting Lisbon before the 1755 earthquake.",
+    "tags": [
+      "viewpoint",
+      "azulejos",
+      "photography",
+      "scenic",
+      "free"
+    ],
+    "estimated_duration_hours": 1.5,
+    "estimated_cost_amount": 0.0,
+    "estimated_cost_currency": "EUR",
+    "lat": 38.7116,
+    "lon": -9.1303,
+    "source_citation": "Wikivoyage contributors, 'Lisbon/Alfama', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/Lisbon/Alfama"
+  },
+  {
+    "id": "lisbon-tram-28-ride",
+    "name": "Historic Tram 28 Scenic Route",
+    "destination": "LIS",
+    "city": "Lisbon",
+    "description": "The quintessential vintage yellow tram rattling through Lisbon's steepest and narrowest streets, linking Martim Moniz with Campo de Ourique through Graça, Alfama, Baixa, and Estrela.",
+    "tags": [
+      "transport",
+      "historic",
+      "scenic",
+      "city-tour"
+    ],
+    "estimated_duration_hours": 1.0,
+    "estimated_cost_amount": 3.1,
+    "estimated_cost_currency": "EUR",
+    "lat": 38.715,
+    "lon": -9.136,
+    "source_citation": "Wikivoyage contributors, 'Lisbon', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/Lisbon"
+  },
+  {
+    "id": "barcelona-sagrada-familia",
+    "name": "Basílica de la Sagrada Família",
+    "destination": "BCN",
+    "city": "Barcelona",
+    "description": "Antoni Gaudí's unfinished masterwork basilica in the Eixample district. Famous for its towering organic spires, the Nativity and Passion façades, and the interior stone forest bathed in multi-colored stained glass light.",
+    "tags": [
+      "unesco",
+      "gaudi",
+      "architecture",
+      "basilica",
+      "landmark"
+    ],
+    "estimated_duration_hours": 2.5,
+    "estimated_cost_amount": 26.0,
+    "estimated_cost_currency": "EUR",
+    "lat": 41.4036,
+    "lon": 2.1744,
+    "source_citation": "Wikivoyage contributors, 'Barcelona/Eixample', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/Barcelona/Eixample"
+  },
+  {
+    "id": "barcelona-park-guell",
+    "name": "Park Güell",
+    "destination": "BCN",
+    "city": "Barcelona",
+    "description": "A public park system composed of gardens and architectural elements designed by Antoni Gaudí located on Carmel Hill. Features the colorful mosaic salamander (El Drac), serpentine benches, and panoramic views of the city.",
+    "tags": [
+      "unesco",
+      "park",
+      "gaudi",
+      "mosaic",
+      "viewpoint"
+    ],
+    "estimated_duration_hours": 2.0,
+    "estimated_cost_amount": 10.0,
+    "estimated_cost_currency": "EUR",
+    "lat": 41.4145,
+    "lon": 2.1527,
+    "source_citation": "Wikivoyage contributors, 'Barcelona/Gràcia', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/Barcelona/Gr%C3%A0cia"
+  },
+  {
+    "id": "barcelona-gothic-quarter",
+    "name": "Barri Gòtic (Gothic Quarter) Walking Tour",
+    "destination": "BCN",
+    "city": "Barcelona",
+    "description": "The historic center of the old city of Barcelona, stretching from La Rambla to Via Laietana. Includes medieval squares like Plaça del Rei, the Cathedral of the Holy Cross and Saint Eulalia, and preserved Roman wall foundations.",
+    "tags": [
+      "historic",
+      "walking",
+      "medieval",
+      "architecture",
+      "neighborhood"
+    ],
+    "estimated_duration_hours": 2.0,
+    "estimated_cost_amount": 0.0,
+    "estimated_cost_currency": "EUR",
+    "lat": 41.3833,
+    "lon": 2.1764,
+    "source_citation": "Wikivoyage contributors, 'Barcelona/Ciutat Vella', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/Barcelona/Ciutat_Vella"
+  },
+  {
+    "id": "london-british-museum",
+    "name": "The British Museum",
+    "destination": "LON",
+    "city": "London",
+    "description": "World-renowned public museum in Bloomsbury dedicated to human history, art and culture. Permanent collection contains 8 million works including the Rosetta Stone, Parthenon Sculptures, and Egyptian mummies, centered around the spectacular Great Court glass dome.",
+    "tags": [
+      "museum",
+      "history",
+      "culture",
+      "free",
+      "ancient"
+    ],
+    "estimated_duration_hours": 3.5,
+    "estimated_cost_amount": 0.0,
+    "estimated_cost_currency": "GBP",
+    "lat": 51.5194,
+    "lon": -0.127,
+    "source_citation": "Wikivoyage contributors, 'London/Bloomsbury', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/London/Bloomsbury"
+  },
+  {
+    "id": "london-tower-of-london",
+    "name": "Tower of London & Crown Jewels",
+    "destination": "LON",
+    "city": "London",
+    "description": "Historic castle located on the north bank of the River Thames, founded in 1066 as part of the Norman Conquest. Houses the British Crown Jewels, the medieval White Tower, Yeoman Warder ('Beefeater') guided tours, and resident ravens.",
+    "tags": [
+      "unesco",
+      "castle",
+      "history",
+      "royalty",
+      "landmark"
+    ],
+    "estimated_duration_hours": 3.0,
+    "estimated_cost_amount": 34.0,
+    "estimated_cost_currency": "GBP",
+    "lat": 51.5081,
+    "lon": -0.0759,
+    "source_citation": "Wikivoyage contributors, 'London/City', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/London/City"
+  },
+  {
+    "id": "london-south-bank-walk",
+    "name": "South Bank Cultural Promenade",
+    "destination": "LON",
+    "city": "London",
+    "description": "Vibrant pedestrianized embankment along the Thames featuring the London Eye, Tate Modern art gallery, Shakespeare's Globe theatre, Borough Market street food, and street performers.",
+    "tags": [
+      "walking",
+      "art",
+      "theatre",
+      "food",
+      "riverfront"
+    ],
+    "estimated_duration_hours": 2.5,
+    "estimated_cost_amount": 0.0,
+    "estimated_cost_currency": "GBP",
+    "lat": 51.5065,
+    "lon": -0.115,
+    "source_citation": "Wikivoyage contributors, 'London/South Bank', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/London/South_Bank"
+  },
+  {
+    "id": "tokyo-sensoji-temple",
+    "name": "Sensō-ji Temple & Nakamise-dōri",
+    "destination": "TYO",
+    "city": "Tokyo",
+    "description": "Tokyo's oldest and most significant Buddhist temple located in Asakusa, founded in 645 AD. Visitors pass under the massive Kaminarimon (Thunder Gate) paper lantern and stroll along Nakamise shopping street leading to the five-story pagoda.",
+    "tags": [
+      "temple",
+      "historic",
+      "culture",
+      "buddhist",
+      "landmark"
+    ],
+    "estimated_duration_hours": 2.0,
+    "estimated_cost_amount": 0.0,
+    "estimated_cost_currency": "JPY",
+    "lat": 35.7148,
+    "lon": 139.7967,
+    "source_citation": "Wikivoyage contributors, 'Tokyo/Asakusa', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/Tokyo/Asakusa"
+  },
+  {
+    "id": "tokyo-shinjuku-gyoen",
+    "name": "Shinjuku Gyoen National Garden",
+    "destination": "TYO",
+    "city": "Tokyo",
+    "description": "One of Tokyo's largest and most popular parks, blending traditional Japanese landscaped gardens with English landscape and French formal garden designs. Features teahouses, serene ponds, and expansive lawns.",
+    "tags": [
+      "garden",
+      "nature",
+      "scenic",
+      "relaxing",
+      "park"
+    ],
+    "estimated_duration_hours": 2.0,
+    "estimated_cost_amount": 500.0,
+    "estimated_cost_currency": "JPY",
+    "lat": 35.6852,
+    "lon": 139.7101,
+    "source_citation": "Wikivoyage contributors, 'Tokyo/Shinjuku', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/Tokyo/Shinjuku"
+  },
+  {
+    "id": "paris-louvre-museum",
+    "name": "Musée du Louvre",
+    "destination": "PAR",
+    "city": "Paris",
+    "description": "The world's most-visited art museum and a historic monument in Paris, housed in the former Louvre Palace on the Right Bank of the Seine. Home to Leonardo da Vinci's Mona Lisa, the Venus de Milo, and the Winged Victory of Samothrace under I.M. Pei's glass pyramid.",
+    "tags": [
+      "museum",
+      "art",
+      "landmark",
+      "history",
+      "masterpieces"
+    ],
+    "estimated_duration_hours": 3.5,
+    "estimated_cost_amount": 22.0,
+    "estimated_cost_currency": "EUR",
+    "lat": 48.8606,
+    "lon": 2.3376,
+    "source_citation": "Wikivoyage contributors, 'Paris/1st arrondissement', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/Paris/1st_arrondissement"
+  },
+  {
+    "id": "paris-montmartre-sacre-coeur",
+    "name": "Montmartre & Basilique du Sacré-Cœur",
+    "destination": "PAR",
+    "city": "Paris",
+    "description": "A historic hilltop bohemian neighborhood famous for its artist studios, cobblestone streets, Place du Tertre portraitists, and the white-domed Sacré-Cœur basilica commanding panoramic views across Paris.",
+    "tags": [
+      "viewpoint",
+      "historic",
+      "neighborhood",
+      "basilica",
+      "art"
+    ],
+    "estimated_duration_hours": 2.5,
+    "estimated_cost_amount": 0.0,
+    "estimated_cost_currency": "EUR",
+    "lat": 48.8867,
+    "lon": 2.3431,
+    "source_citation": "Wikivoyage contributors, 'Paris/18th arrondissement', Wikivoyage, CC BY-SA 4.0, https://en.wikivoyage.org/wiki/Paris/18th_arrondissement"
+  }
+]

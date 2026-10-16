@@ -1,0 +1,296 @@
+@import "tailwindcss";
+@config "../../tailwind.config.mjs";
+
+/* Import font files using Fontsource */
+@import "@fontsource/inter/index.css";
+@import "@fontsource/jetbrains-mono/index.css";
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+:root {
+  --color-deep-blue: #071D49;
+  --color-ocean-blue: #087BD8;
+  --color-electric-cyan: #28DFFF;
+  --color-aqua: #35F2D0;
+  --color-violet: #7667FF;
+  --color-purple: #A855F7;
+  --color-magenta: #EC5BC8;
+  --color-coral: #FF7188;
+  --color-sunset-orange: #FF9A55;
+  --color-gold: #FFC85A;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #E2E8F0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #071D49;
+  color: #FFFFFF;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* 
+  UNIFIED 3D ILLUSTRATED TRAVEL WORLD BACKGROUND
+  Single continuous Pixar-style panoramic illustration:
+  Left: 3D travel globe with landmarks in sunset clouds
+  Center: open ocean with golden sunset reflection
+  Right: stylized Mediterranean Santorini coastal village
+*/
+.sunset-bg-layer {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/unified_travel_world_bg.webp'), url('/assets/unified_travel_world_bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 
+  MINIMAL LOCALIZED ATMOSPHERIC OVERLAY
+  Strictly transparent over the scenery, globe, and ocean.
+  Localized soft radial vignette only directly behind text for contrast,
+  and a gentle gradient at the bottom for destination cards.
+*/
+.sunset-overlay-vignette {
+  position: absolute;
+  inset: 0;
+  background: 
+    /* Very soft localized radial contrast ellipse behind hero text */
+    radial-gradient(ellipse 60% 45% at 54% 40%, rgba(7, 29, 73, 0.28) 0%, rgba(7, 29, 73, 0.05) 55%, transparent 100%),
+    /* Gentle bottom gradient for destination cards */
+    linear-gradient(to bottom, transparent 66%, rgba(7, 29, 73, 0.65) 90%, #071D49 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Keyframe Animations: Micro-interactions ONLY (NO layout or element movement) */
+@keyframes rotateBorder {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+@keyframes pulseHalo {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(40, 223, 255, 0.4), inset 0 0 8px rgba(118, 103, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(40, 223, 255, 0.75), inset 0 0 14px rgba(236, 91, 200, 0.5);
+  }
+}
+
+/* Orbiting Airplane around the Left Globe */
+@keyframes orbitAirplaneLoop {
+  0% {
+    transform: rotate(0deg) translateX(155px) rotate(0deg) scale(0.88);
+  }
+  25% {
+    transform: rotate(90deg) translateX(170px) rotate(-90deg) scale(1.04);
+  }
+  50% {
+    transform: rotate(180deg) translateX(155px) rotate(-180deg) scale(0.92);
+  }
+  75% {
+    transform: rotate(270deg) translateX(145px) rotate(-270deg) scale(0.85);
+  }
+  100% {
+    transform: rotate(360deg) translateX(155px) rotate(-360deg) scale(0.88);
+  }
+}
+
+/* 
+  HERO STAGE & STRICT SINGLE-AXIS CENTERING
+  Desktop Target: 52% - 56% horizontal center (optically 54%)
+  Width: min(760px, 48vw)
+*/
+.hero-stage-container {
+  position: relative;
+  min-height: 74vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content-wrapper {
+  position: relative;
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  position: relative;
+  width: 100%;
+  max-width: min(740px, 94vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-inline: auto;
+  z-index: 20;
+}
+
+@media (min-width: 1024px) {
+  /*
+    Optically center hero group slightly left at ~53% viewport center:
+    Visual true center between the large globe on the left and Santorini on the right.
+  */
+  .hero-content-wrapper {
+    justify-content: flex-start;
+  }
+  .hero-content {
+    left: 53%;
+    transform: translateX(-50%);
+    width: min(740px, 48vw);
+    max-width: 740px;
+    margin-inline: 0;
+  }
+}
+
+/* 
+  CHAT INPUT: Primary CTA, highly prominent, rich glassmorphism
+  Width: 650-760px, Height: 72px, Radius: 32px
+*/
+.concierge-glass-input {
+  position: relative;
+  height: 72px;
+  border-radius: 32px;
+  background: rgba(7, 26, 58, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(40, 223, 255, 0.45);
+  box-shadow: 
+    0 14px 36px -6px rgba(3, 12, 30, 0.7), 
+    0 0 24px -2px rgba(40, 223, 255, 0.25),
+    0 0 40px rgba(118, 103, 255, 0.18),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+/* NO translateY on hover! */
+.concierge-glass-input:hover {
+  border-color: rgba(168, 85, 247, 0.65);
+  background: rgba(10, 34, 72, 0.75);
+  box-shadow: 
+    0 16px 42px -6px rgba(3, 12, 30, 0.8), 
+    0 0 35px rgba(40, 223, 255, 0.35),
+    0 0 50px rgba(236, 91, 200, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.35);
+}
+
+/* Traveling Animated Border Glow on Focus: cyan → blue → violet → pink → cyan (3.5s) */
+.concierge-glass-input-wrapper {
+  position: relative;
+  padding: 2px;
+  border-radius: 34px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.concierge-glass-input-wrapper.is-focused {
+  background: conic-gradient(
+    from var(--border-angle),
+    transparent 10%,
+    #28DFFF 30%,
+    #087BD8 50%,
+    #7667FF 70%,
+    #EC5BC8 85%,
+    #FF7188 95%,
+    transparent 100%
+  );
+  animation: rotateBorder 3.5s linear infinite;
+  box-shadow: 
+    0 0 38px 4px rgba(40, 223, 255, 0.4), 
+    0 0 55px 10px rgba(168, 85, 247, 0.3);
+}
+
+.concierge-glass-input-wrapper.is-focused .concierge-glass-input {
+  background: rgba(6, 22, 50, 0.88);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-color: transparent;
+}
+
+/* Suggestion Chips: Shared center axis, NO translateY */
+.suggestion-chip {
+  background: rgba(8, 28, 62, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 24px -3px rgba(3, 12, 30, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.suggestion-chip:hover {
+  border-color: rgba(40, 223, 255, 0.6);
+  background: rgba(14, 44, 90, 0.8);
+  box-shadow: 0 10px 28px -4px rgba(3, 12, 30, 0.6), 0 0 20px rgba(40, 223, 255, 0.35);
+}
+
+/* Glassmorphic Cards & Panels */
+.glass-panel-warm {
+  background: rgba(8, 26, 58, 0.68);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 40px -10px rgba(2, 10, 28, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glass-panel-warm:hover {
+  border-color: rgba(40, 223, 255, 0.5);
+  box-shadow: 0 20px 48px -8px rgba(2, 10, 28, 0.7), 0 0 32px -4px rgba(40, 223, 255, 0.28);
+}
+
+.chat-messages {
+  overflow-anchor: none;
+  overscroll-behavior: contain;
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #071D49;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(40, 223, 255, 0.6);
+}
+
+/* Motion boundary constraints */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: scroll !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}

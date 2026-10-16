@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ItineraryDay from '../../components/ItineraryDay.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { id: 'lisbon-trip' } },
+    { params: { id: 'test' } },
+  ];
+}
+
+// Get trip ID from parameters
+const { id } = Astro.params;
+
+// Mock itinerary data for Lisbontrip demonstration
+const days = [
+  {
+    day: 1,
+    dateStr: "Thursday, Sep 10",
+    title: "Arrival in Lisbon",
+    items: [
+      {
+        time: "08:15",
+        type: "transport" as const,
+        title: "Flight TP 1352 from London Heathrow (LHR) to Lisbon Portela (LIS)",
+        description: "TAP Portugal Flight, duration: 2h 45m. Gate B24.",
+        cost: "€145.00",
+        isEstimated: false
+      },
+      {
+        time: "12:30",
+        type: "accommodation" as const,
+        title: "Check-in at Heritage Avenida Liberdade Hotel",
+        description: "Avenida da Liberdade 223, 1250-142 Lisboa. Booking reference: #TM-89312.",
+        cost: "€180.00 / night",
+        isEstimated: true
+      },
+      {
+        time: "15:00",
+        type: "activity" as const,
+        title: "Explore Historic Alfama and St. George Castle",
+        description: "Self-guided walk through winding alleys, visiting historical battlements with panoramic views.",
+        cost: "Free",
+        isEstimated: false
+      }
+    ]
+  },
+  {
+    day: 2,
+    dateStr: "Friday, Sep 11",
+    title: "Sintra Day Trip",
+    items: [
+      {
+        time: "09:00",
+        type: "transport" as const,
+        title: "Train from Rossio Station to Sintra",
+        description: "Comboios de Portugal regional train, duration: 40m. Highly scenic route.",
+        cost: "€4.50",
+        isEstimated: false
+      },
+      {
+        time: "10:30",
+        type: "activity" as const,
+        title: "Pena Palace & Park Visit",
+        description: "Fanciful romanticist castle sitting atop Sintra hills. Guided tour of the palace chambers.",
+        cost: "€14.00",
+        isEstimated: false
+      }
+    ]
+  }
+];
+
+const totalCost = "€343.50";
+---
+
+<BaseLayout title={`Trip to Lisbon (${id})`} description="Your custom travel plan curated by TripMesh.">
+  <div class="space-y-6 max-w-3xl mx-auto py-4">
+    {/* Page Header */}
+    <div class="flex flex-col md:flex-row md:justify-between md:items-center border-b border-horizon-300/30 pb-4">
+      <div>
+        <a href="/" class="text-xs font-mono text-horizon-300 hover:text-horizon-600 flex items-center gap-1 mb-2">
+          ← Back to planner
+        </a>
+        <h1 class="font-display text-3xl font-medium tracking-tight text-horizon-600 dark:text-horizon-300">
+          Trip to Lisbon
+        </h1>
+        <p class="text-xs text-horizon-300 font-mono mt-1">itinerary ID: {id}</p>
+      </div>
+
+      <div class="mt-4 md:mt-0 text-right bg-brass-400/10 border border-brass-400/20 px-4 py-2 rounded-lg">
+        <span class="text-[10px] uppercase font-mono text-brass-400 block tracking-wider">Total Estimated Cost</span>
+        <span class="text-2xl font-mono font-medium text-brass-400">{totalCost}</span>
+      </div>
+    </div>
+
+    {/* Day Cards Stack */}
+    <div class="space-y-6">
+      {days.map((day) => (
+        <ItineraryDay 
+          day={day.day} 
+          dateStr={day.dateStr} 
+          title={day.title} 
+          items={day.items} 
+        />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

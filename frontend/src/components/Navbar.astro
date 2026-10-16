@@ -1,0 +1,41 @@
+---
+// Navbar.astro - Minimalist floating header matching approved design
+import TravelProfile from './TravelProfile.tsx';
+---
+
+<header class="sticky top-0 z-50 w-full transition-all duration-300 pointer-events-none pt-4 pb-2 px-4 sm:px-6 lg:px-12">
+  <div class="max-w-[1500px] mx-auto flex items-center justify-between">
+    <!-- Top-Left is intentionally EMPTY as requested by design spec -->
+    <div class="w-11"></div>
+
+    <!-- Centered Translucent Glass Navigation Pill -->
+    <nav class="pointer-events-auto flex items-center gap-1 sm:gap-2 p-1.5 rounded-full bg-[#081B38]/35 border border-white/[0.12] backdrop-blur-md shadow-[0_8px_24px_rgba(2,10,24,0.3)]">
+      <a 
+        href="#concierge" 
+        class="px-4 py-1.5 rounded-full text-xs font-medium text-white bg-white/[0.14] border border-[#24D9FF]/30 transition-all no-underline flex items-center gap-2 shadow-[0_0_12px_rgba(36,217,255,0.25)]"
+      >
+        <span class="w-1.5 h-1.5 rounded-full bg-[#24D9FF] shadow-[0_0_8px_#24D9FF]"></span>
+        <span>Concierge</span>
+      </a>
+
+      <a 
+        href="#inspiration" 
+        class="px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-300 hover:text-white hover:bg-white/[0.08] transition-all no-underline"
+      >
+        Inspiration
+      </a>
+
+      <a 
+        href="#moods" 
+        class="px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-300 hover:text-white hover:bg-white/[0.08] transition-all no-underline"
+      >
+        Travel Moods
+      </a>
+    </nav>
+
+    <!-- Top-Right: Single Circular Travel Avatar Profile Button -->
+    <div class="pointer-events-auto flex items-center justify-end w-11">
+      <TravelProfile client:load />
+    </div>
+  </div>
+</header>

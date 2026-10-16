@@ -1,0 +1,102 @@
+---
+// DestinationInspiration.astro - Lightweight inspiration section matching approved reference
+interface DestinationItem {
+  name: string;
+  emoji: string;
+  description: string;
+  image: string;
+  prompt: string;
+}
+
+const destinations: DestinationItem[] = [
+  {
+    name: "Tokyo",
+    emoji: "⛩",
+    description: "Neon skylines, rich culture and endless discoveries",
+    image: "/assets/dest_tokyo.jpg",
+    prompt: "Plan a trip to Tokyo for 5 days with iconic culture, food and experiences",
+  },
+  {
+    name: "Bali",
+    emoji: "🌴",
+    description: "Beaches, temples and tropical paradise",
+    image: "/assets/dest_bali.jpg",
+    prompt: "Plan a relaxing 6-day tropical trip to Bali with scenic beach villas",
+  },
+  {
+    name: "Rome",
+    emoji: "🏛",
+    description: "History, art and unforgettable cuisine",
+    image: "/assets/dest_rome.jpg",
+    prompt: "Plan a 4-day trip to Rome with historic landmarks, boutique stays and culinary tours",
+  },
+  {
+    name: "Reykjavik",
+    emoji: "🏔",
+    description: "Volcanoes, glaciers and northern lights",
+    image: "/assets/dest_reykjavik.jpg",
+    prompt: "Plan a 4-day adventure to Reykjavik to see the northern lights and thermal springs",
+  },
+];
+---
+
+<section id="inspiration" class="relative z-10 py-16 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+  <!-- Section Title -->
+  <div class="text-center mb-10 space-y-2">
+    <h2 class="text-3xl sm:text-4xl font-sans font-bold text-white tracking-tight flex items-center justify-center gap-3">
+      <span class="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#24D9FF]/40 hidden sm:inline-block"></span>
+      <span>Discover Inspiration</span>
+      <span class="h-[1px] w-12 bg-gradient-to-l from-transparent to-[#24D9FF]/40 hidden sm:inline-block"></span>
+    </h2>
+    <p class="text-sm text-slate-300 max-w-md mx-auto">
+      Get inspired by places curated by AI for you.
+    </p>
+  </div>
+
+  <!-- 4 Destination Cards: Individual Separate Boxes matching reference screenshot -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {destinations.map((dest, idx) => (
+      <div
+        class="group relative rounded-3xl overflow-hidden cursor-pointer h-[340px] sm:h-[370px] flex flex-col justify-end p-6 border border-white/[0.14] transition-all duration-300 hover:-translate-y-2 hover:border-[#28DFFF]/60 hover:shadow-[0_20px_48px_rgba(2,10,28,0.85),0_0_28px_rgba(40,223,255,0.3)] shadow-[0_14px_36px_rgba(2,10,28,0.65)]"
+        onclick={`window.dispatchEvent(new CustomEvent('tripmesh:set-prompt', { detail: { prompt: "${dest.prompt}", autoSend: false } })); const el = document.getElementById('chat-input') || document.getElementById('concierge'); el?.scrollIntoView({ behavior: 'smooth' }); el?.focus();`}
+        role="button"
+        tabindex="0"
+        aria-label={`Ask AI about ${dest.name}`}
+      >
+        <!-- Full-Card Background Image: Edge-to-edge -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+          <img
+            src={dest.image}
+            alt={dest.name}
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+          />
+          <!-- Multi-stop Sunset-Infused Glass Gradient Overlay for Perfect Text Readability -->
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061A3A]/95 via-[#061A3A]/50 to-transparent transition-opacity duration-300 group-hover:opacity-90"></div>
+          <div class="absolute inset-0 bg-[#061A3A]/20 group-hover:bg-transparent transition-colors duration-300"></div>
+        </div>
+
+        <!-- Card Content at Bottom: Icon + Name + Description + Arrow Button -->
+        <div class="relative z-10 flex items-end justify-between gap-3">
+          <div class="space-y-1.5 flex-1 min-w-0 pr-2">
+            <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2 group-hover:text-[#28DFFF] transition-colors drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              <span>{dest.emoji}</span>
+              <span>{dest.name}</span>
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-200 leading-relaxed line-clamp-2 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
+              {dest.description}
+            </p>
+          </div>
+
+          <!-- Circular Arrow Button -->
+          <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center bg-white/[0.12] backdrop-blur-md border border-white/[0.22] group-hover:bg-[#28DFFF] group-hover:border-[#28DFFF] group-hover:text-[#061A3A] text-white transition-all duration-300 group-hover:scale-110 shrink-0 shadow-md">
+            <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

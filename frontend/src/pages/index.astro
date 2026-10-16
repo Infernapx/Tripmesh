@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChatPanel from '../components/ChatPanel.tsx';
+import DestinationInspiration from '../components/DestinationInspiration.astro';
+import MoodExploration from '../components/MoodExploration.astro';
+---
+
+<BaseLayout title="AI Travel Concierge">
+  <!-- 
+    HERO STAGE:
+    Strict Desktop Composition:
+    [ LEFT ~32%: 3D Globe with Orbiting Airplane in Clouds ] 
+    [ CENTER 52%-56%: Single-Axis Hero & Chatbot Primary Product ] 
+    [ RIGHT ~24%: Visible Mediterranean Santorini Village & Sunset ]
+  -->
+  <section class="hero-stage-container relative z-10 w-full min-h-[74vh] flex items-center justify-center px-4 sm:px-6 pt-4 pb-10">
+
+    <!-- 
+      HERO CONTENT: Strict Single Center Axis
+      Eyebrow -> Headline -> Subtitle -> Chat Input -> Prompt Chips
+      All 5 elements share the exact same center axis!
+      Horizontally centered at 53-55% visual center (away from right-hand buildings)
+    -->
+    <div class="hero-content-wrapper w-full flex items-center justify-center">
+      <div class="hero-content">
+        <ChatPanel client:load />
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+    SECTION 2: Discover Inspiration (4 Destination Cards: Tokyo, Bali, Rome, Reykjavik)
+  -->
+  <DestinationInspiration />
+
+  <!-- 
+    SECTION 3: Atmospheric Travel Moods
+  -->
+  <MoodExploration />
+</BaseLayout>

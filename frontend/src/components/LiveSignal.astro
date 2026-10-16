@@ -1,0 +1,45 @@
+---
+// LiveSignal.astro - Futuristic real-time system signal strip
+---
+
+<section class="relative z-10 py-8 max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10">
+  <div class="rounded-2xl p-4 sm:p-5 bg-[#071D49]/70 backdrop-blur-xl border border-white/[0.14] shadow-[0_12px_32px_rgba(2,10,28,0.55)] flex flex-col md:flex-row items-center justify-between gap-4">
+    <!-- Left Signal Pulse -->
+    <div class="flex items-center gap-3">
+      <div class="relative flex h-3 w-3">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#28DFFF] opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-[#28DFFF]"></span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+        <span class="font-mono text-xs font-bold tracking-widest text-[#28DFFF] uppercase drop-shadow-[0_0_8px_rgba(40,223,255,0.4)]">
+          TRIPMESH LIVE
+        </span>
+        <span class="hidden sm:inline text-white/30">|</span>
+        <span class="text-xs text-white font-medium drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+          Autonomous multi-agent coordination active
+        </span>
+      </div>
+    </div>
+
+    <!-- Center Descriptive Pill -->
+    <div class="hidden lg:block text-xs text-slate-200 font-normal">
+      "Discovering personalized journeys based on real-time inventory, route efficiency, and strict budget ceilings."
+    </div>
+
+    <!-- Right Live Metrics Ticker -->
+    <div class="flex items-center gap-4 text-[11px] font-mono text-slate-200 font-medium">
+      <div class="flex items-center gap-1.5">
+        <span class="text-[#35F2D0] drop-shadow-[0_0_6px_rgba(53,242,208,0.6)]">●</span>
+        <span>Flight Mesh: Synchronized</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-1.5">
+        <span class="text-[#28DFFF] drop-shadow-[0_0_6px_rgba(40,223,255,0.6)]">●</span>
+        <span>Hotels: Real-Time</span>
+      </div>
+      <div class="hidden md:flex items-center gap-1.5">
+        <span class="text-[#7667FF] drop-shadow-[0_0_6px_rgba(118,103,255,0.6)]">●</span>
+        <span>Multi-Currency: Live</span>
+      </div>
+    </div>
+  </div>
+</section>

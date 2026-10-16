@@ -1,0 +1,29 @@
+{
+  "_comment": "Static agent registry used by the Planner in v1. Dynamic discovery is a stretch goal (Phase 10).",
+  "agents": [
+    {
+      "name": "transport_agent",
+      "description": "Multi-modal transport search (flight, train, bus) via pluggable adapters.",
+      "endpoint": "http://transport_agent:8002",
+      "skills": ["search_transport"]
+    },
+    {
+      "name": "hotel_agent",
+      "description": "Hotel / accommodation search via Amadeus sandbox or mock.",
+      "endpoint": "http://hotel_agent:8003",
+      "skills": ["search_hotels"]
+    },
+    {
+      "name": "local_guide_agent",
+      "description": "RAG-grounded local activity and POI recommendations with source citations.",
+      "endpoint": "http://local_guide_agent:8004",
+      "skills": ["recommend_activities"]
+    },
+    {
+      "name": "budget_agent",
+      "description": "Currency conversion (Frankfurter) and budget reconciliation / negotiation.",
+      "endpoint": "http://budget_agent:8005",
+      "skills": ["convert_currency", "check_budget"]
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+# =============================================================================
+# TripMesh — Docker Compose configuration (Phase 2 / Astro integration)
+# =============================================================================
+
+version: "3.9"
+
+networks:
+  tripmesh_net:
+    driver: bridge
+
+# ---------------------------------------------------------------------------
+# Shared x-templates (YAML anchors to avoid repetition)
+# ---------------------------------------------------------------------------
+x-agent-defaults: &agent-defaults
+  restart: unless-stopped
+  networks:
+    - tripmesh_net
+  env_file:
+    - .env
+  volumes:
+    - ./shared:/app/shared:ro
+
+# ---------------------------------------------------------------------------
+# Services
+# ---------------------------------------------------------------------------
+services:
+
+  # -------------------------------------------------------------------------
+  # Frontend — Astro app (serving UI on http://localhost:4321)
+  # -------------------------------------------------------------------------
+  frontend:
+    restart: unless-stopped
+    networks:
+      - tripmesh_net
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4321:4321"
+    container_name: tripmesh_frontend
+
+  # -------------------------------------------------------------------------
+  # Gateway — thin HTTP gateway in front of the agents
+  # -------------------------------------------------------------------------
+  gateway:
+    <<: *agent-defaults
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    ports:
+      - "${GATEWAY_PORT:-8000}:8000"
+    container_name: tripmesh_gateway
+    environment:
+      - PLANNER_AGENT_URL=http://planner_agent:8001
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      - planner_agent
+
+  # -------------------------------------------------------------------------
+  # Planner Agent — LangGraph orchestrator (Phase 2)
+  # -------------------------------------------------------------------------
+  planner_agent:
+    <<: *agent-defaults
+    build:
+      context: ./planner_agent
+      dockerfile: Dockerfile
+    ports:
+      - "${PLANNER_AGENT_PORT:-8001}:8001"
+    container_name: tripmesh_planner_agent
+    environment:
+      - BUDGET_AGENT_URL=http://budget_agent:8005
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      - budget_agent
+      - transport_agent
+      - hotel_agent
+      - local_guide_agent
+
+  # -------------------------------------------------------------------------
+  # Transport Agent — LangGraph + pluggable mode adapters
+  # -------------------------------------------------------------------------
+  transport_agent:
+    <<: *agent-defaults
+    build:
+      context: ./transport_agent
+      dockerfile: Dockerfile
+    ports:
+      - "${TRANSPORT_AGENT_PORT:-8002}:8002"
+    container_name: tripmesh_transport_agent
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # -------------------------------------------------------------------------
+  # Hotel Agent — CrewAI + Amadeus
+  # -------------------------------------------------------------------------
+  hotel_agent:
+    <<: *agent-defaults
+    build:
+      context: ./hotel_agent_crewai
+      dockerfile: Dockerfile
+    ports:
+      - "${HOTEL_AGENT_PORT:-8003}:8003"
+    container_name: tripmesh_hotel_agent
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # -------------------------------------------------------------------------
+  # Local Guide Agent — LangChain + Chroma RAG
+  # -------------------------------------------------------------------------
+  local_guide_agent:
+    <<: *agent-defaults
+    build:
+      context: ./local_guide_agent_rag
+      dockerfile: Dockerfile
+    ports:
+      - "${LOCAL_GUIDE_AGENT_PORT:-8004}:8004"
+    container_name: tripmesh_local_guide_agent
+    volumes:
+      - ./shared:/app/shared:ro
+      - ./local_guide_agent_rag/data:/app/data:rw
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8004/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # -------------------------------------------------------------------------
+  # Budget Agent — Frankfurter currency API (Phase 1)
+  # -------------------------------------------------------------------------
+  budget_agent:
+    <<: *agent-defaults
+    build:
+      context: ./budget_agent
+      dockerfile: Dockerfile
+    ports:
+      - "${BUDGET_AGENT_PORT:-8005}:8005"
+    container_name: tripmesh_budget_agent
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8005/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

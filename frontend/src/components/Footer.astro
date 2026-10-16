@@ -1,0 +1,88 @@
+---
+// Footer.astro - Minimalist futuristic luxury footer
+---
+
+<footer class="relative z-10 w-full mt-28 border-t border-white/[0.08] bg-[#070B12]/90 backdrop-blur-2xl">
+  <!-- Subtle top accent line -->
+  <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-[#16E6F5]/40 to-transparent"></div>
+
+  <div class="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
+      <!-- Brand & Mission Column -->
+      <div class="md:col-span-2 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-[#16E6F5]/10 border border-[#16E6F5]/30 flex items-center justify-center text-[#16E6F5]">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9"></circle>
+              <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-white tracking-tight">TripMesh</span>
+          <span class="font-mono text-[9px] uppercase px-1.5 py-0.5 rounded bg-white/[0.05] border border-white/10 text-[#91A1B3]">
+            Intelligence Platform
+          </span>
+        </div>
+        <p class="text-sm text-[#91A1B3] max-w-sm leading-relaxed">
+          AI-powered travel planning for curious minds. Seamlessly orchestrating flights, luxury stays, budget boundaries, and atmospheric discovery into personalized journeys.
+        </p>
+        <div class="pt-2 flex items-center gap-2">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#16E6F5]/10 border border-[#16E6F5]/20 text-[11px] font-mono text-[#16E6F5]">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#16E6F5] animate-pulse"></span>
+            ALL AGENT MESH OPERATIONAL
+          </span>
+        </div>
+      </div>
+
+      <!-- Navigation Column 1: Explore -->
+      <div class="space-y-3">
+        <h4 class="font-mono text-xs uppercase tracking-widest text-white font-semibold">
+          Explore
+        </h4>
+        <ul class="space-y-2 text-sm text-[#91A1B3] list-none p-0">
+          <li><a href="#planner" class="hover:text-[#16E6F5] transition-colors no-underline">AI Concierge</a></li>
+          <li><a href="#destinations" class="hover:text-[#16E6F5] transition-colors no-underline">Featured Destinations</a></li>
+          <li><a href="#moods" class="hover:text-[#16E6F5] transition-colors no-underline">Travel Moods</a></li>
+          <li><a href="/trip/lisbon-trip" class="hover:text-[#16E6F5] transition-colors no-underline">Field Journal</a></li>
+        </ul>
+      </div>
+
+      <!-- Navigation Column 2: Technology -->
+      <div class="space-y-3">
+        <h4 class="font-mono text-xs uppercase tracking-widest text-white font-semibold">
+          Technology
+        </h4>
+        <ul class="space-y-2 text-sm text-[#91A1B3] list-none p-0">
+          <li><span class="text-[#F3F7FA]">Multi-Agent Mesh</span></li>
+          <li><span class="text-[#F3F7FA]">Real-Time Fare Engine</span></li>
+          <li><span class="text-[#F3F7FA]">Zero-Commission Guarantee</span></li>
+          <li><span class="text-[#F3F7FA]">Dynamic Re-budgeting</span></li>
+        </ul>
+      </div>
+
+      <!-- Navigation Column 3: Security & Trust -->
+      <div class="space-y-3">
+        <h4 class="font-mono text-xs uppercase tracking-widest text-white font-semibold">
+          Concierge Desk
+        </h4>
+        <ul class="space-y-2 text-sm text-[#91A1B3] list-none p-0">
+          <li><span class="text-[#91A1B3]">24/7 Route Assistance</span></li>
+          <li><span class="text-[#91A1B3]">Direct API Booking Sync</span></li>
+          <li><span class="text-[#91A1B3]">Privacy Architecture</span></li>
+          <li><span class="text-[#91A1B3]">Audit Log Encryption</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#91A1B3]">
+      <div>
+        © 2026 TripMesh. Travel smarter. Explore further.
+      </div>
+      <div class="flex items-center gap-6">
+        <span class="hover:text-white transition-colors cursor-pointer">LATENCY: ~14ms</span>
+        <span class="hover:text-white transition-colors cursor-pointer">CURRENCIES: 18 LIVE</span>
+        <span class="text-[#16E6F5]">TRIPMESH PROTOCOL v2.4</span>
+      </div>
+    </div>
+  </div>
+</footer>

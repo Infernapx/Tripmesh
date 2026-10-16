@@ -1,0 +1,119 @@
+# =============================================================================
+# TripMesh .gitignore
+# =============================================================================
+
+# --- Secrets & Credentials ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+secrets/
+credentials*.json
+service-account*.json
+
+# --- Python & Dependencies ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Testing & Quality Gates ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# --- Logs & Traces ---
+*.log
+logs/
+*.jsonl
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --- Runtime Data & Databases ---
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+**/chroma_db/
+local_guide_agent_rag/data/chroma_db/
+uploaded/
+uploads/
+session_dumps/
+tmp/
+temp/
+
+# --- Node / Frontend Builds ---
+node_modules/
+.astro/
+.next/
+frontend/dist/
+frontend/.astro/
+
+# --- OS & Editor artifacts ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+!.vscode/extensions.json
+**/CLAUDE.md
+CLAUDE.md
+
+# --- AI Agents / Private Scratch & Verification Artifacts ---
+GEMINI.md
+AGENTS.md
+.antigravity/
+.claude/
+.agent/
+.agents/
+.archify/
+.kilo/
+scratch/
+docs-private/
+live_verification_results.json
+verify_round2_results.json
+verify_live*.py
+verify_round2_live.py

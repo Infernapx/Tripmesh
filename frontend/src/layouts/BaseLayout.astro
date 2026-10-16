@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "TripMesh — AI Travel Concierge. Conversational travel planning with autonomous flight, stay, and experience synthesis." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | TripMesh AI Travel Concierge</title>
+    <meta name="description" content={description} />
+  </head>
+  <body class="min-h-screen flex flex-col bg-[#071D49] text-white font-sans antialiased selection:bg-[#28DFFF]/30 selection:text-[#28DFFF] relative overflow-x-hidden">
+    <!-- 
+      Unified 3D Travel World Environment Artwork (Crisp 2560x1440 & 4K High-DPI)
+    -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+      <picture class="w-full h-full block">
+        <source media="(min-width: 1920px)" srcset="/assets/unified_travel_world_bg_4k.webp" type="image/webp" />
+        <source media="(min-width: 1920px)" srcset="/assets/unified_travel_world_bg_4k.jpg" type="image/jpeg" />
+        <source srcset="/assets/unified_travel_world_bg.webp" type="image/webp" />
+        <img
+          src="/assets/unified_travel_world_bg.jpg"
+          alt="Unified 3D Travel World Panorama"
+          class="w-full h-full object-cover object-center select-none"
+          loading="eager"
+          decoding="async"
+        />
+      </picture>
+      <div class="sunset-overlay-vignette"></div>
+    </div>
+
+    <!-- Top Minimal Navigation -->
+    <Navbar />
+
+    <!-- Main Content Slot -->
+    <main class="relative z-10 flex-grow w-full flex flex-col">
+      <slot />
+    </main>
+  </body>
+</html>
