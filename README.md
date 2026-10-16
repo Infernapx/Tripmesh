@@ -83,9 +83,8 @@ cp .env.example .env
 docker compose up --build
 ```
 
-- **Frontend UI**: [http://localhost:4321](http://localhost:4321)
-- **API Gateway**: [http://localhost:8000](http://localhost:8000)
-- **Interactive API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
+- **LINK**: [http://localhost:4321](http://localhost:4321)
+
 
 ---
 
