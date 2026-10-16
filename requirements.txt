@@ -12,3 +12,5 @@ reportlab>=4.0.0
 icalendar>=5.0.0
 pytest>=8.0.0
 pytest-asyncio>=0.23.0
+a2a-sdk>=0.1.0
+sse-starlette>=2.0.0
