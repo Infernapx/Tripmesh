@@ -2,8 +2,8 @@
 
 > **Multi-Agent AI Travel Concierge** built with LangGraph, A2A Protocol, CrewAI, RAG with Chroma, and an Astro + React frontend.
 
-[![CI](https://github.com/anujk/tripmesh/actions/workflows/ci.yml/badge.svg)](https://github.com/anujk/tripmesh/actions/workflows/ci.yml)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/anujk/tripmesh)
+[![CI](https://github.com/Infernapx/tripmesh/actions/workflows/ci.yml/badge.svg)](https://github.com/Infernapx/tripmesh/actions/workflows/ci.yml)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Infernapx/tripmesh)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 TripMesh transforms chaotic travel planning into an intelligent conversation. Instead of juggling dozens of browser tabs for flights, hotels, weather, local attractions, and budgets, TripMesh deploys a coordinated mesh of specialized autonomous agents that collaborate, negotiate, and adapt to your constraints in real time.
@@ -73,7 +73,7 @@ Start the entire agent mesh and frontend with a single command:
 
 ```bash
 # Clone the repository
-git clone https://github.com/anujk/tripmesh.git
+git clone https://github.com/Infernapx/tripmesh.git
 cd tripmesh
 
 # Copy sample environment configuration (all keys are optional!)
